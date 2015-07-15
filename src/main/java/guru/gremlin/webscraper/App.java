@@ -22,11 +22,11 @@ public class App {
     final static SimpleDateFormat DURATION_FORMAT = new SimpleDateFormat("HH:mm:ss.SSS", Locale.getDefault());
 
     public static void main(final String[] args) throws Exception {
-        if (args.length == 0) {
+        if (args.length < 2) {
             System.exit(2);
         }
         final String output = args[0];
-        final String url = args.length > 1 ? args[1] : "http://www.tinkerpop.com";
+        final String url = args[1];
         final Integer maxDepth = args.length > 2 ? Integer.parseInt(args[2]) : 3;
         final long startTime = System.currentTimeMillis();
         final TinkerGraph graph = TinkerGraph.open();
