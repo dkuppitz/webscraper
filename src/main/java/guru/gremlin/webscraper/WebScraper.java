@@ -152,7 +152,7 @@ public class WebScraper {
                         if ("text/html".equals(contentType)) {
                             m = TITLE_PATTERN.matcher(content);
                             if (m.find()) {
-                                v.property("title", m.group());
+                                v.property("title", m.group().trim());
                             }
                             if (depth > 0) {
                                 m = HREF_PATTERN.matcher(content);
