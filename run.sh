@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mvn -q exec:java -Dexec.mainClass="guru.gremlin.webscraper.App" -Dexec.args=$@
+/bin/bash <<< "mvn -q exec:java -Dexec.mainClass=\"guru.gremlin.webscraper.App\" -Dexec.args=\"$@\""
 
 if [ $? -eq 2 ]; then
   echo
